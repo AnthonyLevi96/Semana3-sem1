@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formularios + CSS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    
+
+    <form id="form-registro" onsubmit="mostrarMensaje(event)">
+      <h3>Información del usuario</h3>
+            <div class="containerInputs">
+        <section>
+          <div class="form-group">
+            <label class="labelHeader" ="inputNombre">Nombre completo</label>
+            <input
+              id="inputNombre"
+              placeholder="Nombres y Apellidos"
+              type="text"
+              required
+              minlength="8"
+              maxlength="22"
+            />
+          </div>
+
+          <div class="form-group">
+            <label class="labelHeader" ="inputNombre">Experiencia Previa</label>
+            <input
+              id="inputNombre"
+              placeholder="Opcional"
+              type="text"
+              minlength="0"
+              maxlength="200"
+            />
+          </div>
+
+          <div class="form-group">
+            <label class="labelHeader" for="inputEdad">Ingresa tu Edad</label>
+            <input id="inputEdad" type="number" min="0" max="99" required />
+          </div>
+          <div class="form-group">
+            <label class="labelHeader" for="inputTelefono">Ingresa tu teléfono</label>
+            <input id="inputTelefono" 
+            type="tel" 
+            placeholder="999-999-999"
+            min="0" 
+            max="99" 
+            required 
+            />
+          </div>
+          <div class="form-group">
+            <label class="labelHeader" for="inputEmail">Ingresa tu correo</label>
+            <input
+              id="inputEmail"
+              placeholder="jhondoe@gmail.com"
+              type="email"
+              required
+            />
+          </div>
+      
+          <div class="form-group">
+            <label class="labelHeader">¿Acepta los Terminos y Condiciones?</label>
+
+            <label for="inputSi">
+              Si
+              <input
+                name="Validacion"
+                type="radio"
+                id="inputSi"
+                value="si"
+              />
+            </label>
+
+            <label for="inputNo">
+              No
+              <input
+                name="Validacion"
+                type="radio"
+                id="inputNo"
+                value="no"
+              />
+            </label>
+          </div>
+        </section>
+
+        <section>
+          <div class="form-group">
+            <label class="labelHeader">Habilidades</label>
+            <label for="inputPrimaria">
+              Analyst BackEnd
+              <input
+                name="educacion"
+                type="checkbox"
+                id="inputPrimaria"
+                value="Analyst BackEnd"
+              />
+            </label>
+            <label for="inputSecundaria">
+              Analyst FrontEnd
+              <input
+                name="educacion"
+                type="checkbox"
+                id="inputSecundaria"
+                value="Analyst FrontEnd"
+              />
+            </label>
+            <label for="inputSuperior">
+              Help Desk Analyst
+              <input
+                name="educacion"
+                type="checkbox"
+                id="inputSuperior"
+                value="Help Desk Analyst"
+              />
+            </label>
+          </div>
+          <div class="form-group">
+            <label class="labelHeader">Fecha De Disponibilidad</label>
+            <input type="date" />
+          </div>
+                
+          <div class="form-group">
+            <label for="inputImagen">Subir Foto Perfil</label>
+            <input
+              type="file"
+              id="inputImagen"
+              
+              accept=".png, .jpg, .jpeg"
+            />
+          </div>
+        </section>
+        <section>
+
+
+        </section>
+      </div>
+
+      <button type="submit">Enviar información</button>
+    </form>
+
+    <div id="mensaje-gracias">
+      ¡Gracias por tu interés en ser voluntario! Nos pondremos en contacto contigo pronto.
+  </div>
+
+    <script>
+      // Función para mostrar el mensaje de agradecimiento
+      function mostrarMensaje(event) {
+          event.preventDefault(); // Evita que el formulario se envíe
+
+          // Oculta el formulario y muestra el mensaje de agradecimiento
+          document.getElementById("form-registro").style.display = "none";
+          document.getElementById("mensaje-gracias").style.display = "block";
+      }
+  </script>
+
+  </body>
+</html>
